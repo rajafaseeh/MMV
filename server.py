@@ -13,16 +13,21 @@ def index():
 def sendEmail():
 
     msg = MIMEMultipart()
-    msg['Subject'] = 'Team name,,Group#123'
+    msg['Subject'] = 'Hello from Group#13'
 
-    body = 'Test email sent from phython and flask'
+    body = '''Hello
+This is a test email sent from phython and flask
+
+Thanks and Best Regards
+Group 13 MMW'''
     msg.attach(MIMEText(body,'plain'))
 
     text = msg.as_string()
 
-    email="rajafaseeh204@gmail.com"
+    email="touseef.ashraf90@gmail.com"
     server = smtplib.SMTP("smtp.gmail.com",587)
     server.starttls()
     server.login("rajafaseehuzz@gmail.com","ykkxpkkoftsvgifp")
     response = server.sendmail("rajafaseehuzz@gmail.com",email,text)
     return "Email sent successfully!!!!"
+    
